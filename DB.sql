@@ -40,7 +40,7 @@ select concat('제목',' 1');
 
 select substring(RAND() * 1000 from 1 for 2);
 
-insert into articleset regDate = now(),updateDate = now(),title = concat('제목',substring(RAND() * 1000 from 1 for 2)),`body` = concat('내용',substring(RAND() * 1000 from 1 for 2));
+insert into article set regDate = now(),updateDate = now(),title = concat('제목',substring(RAND() * 1000 from 1 for 2)),`body` = concat('내용',substring(RAND() * 1000 from 1 for 2));
 
 insert into article
 set regDate = now(),
@@ -61,12 +61,13 @@ where id = 1;
 
 select * from article;
 
-select count(*)
+select *
 from article
-where id = 5;
+where id = 2;
 
 UPDATE article
 SET updateDate = NOW(),
     title = 'title1',
     `body` = 'body1'
 WHERE id = 5;
+
