@@ -1,4 +1,6 @@
-package org.example;
+package org.example.dto;
+
+import java.util.Map;
 
 public class Member {
     private int id;
@@ -8,10 +10,13 @@ public class Member {
     private String loginPw;
     private String name;
 
-    public Member(String loginId, String loginPw, String name) {
-        this.loginId = loginId;
-        this.loginPw = loginPw;
-        this.name = name;
+    public Member(Map<String, Object> memberMap) {
+        this.id = (int) memberMap.get("id");
+        this.regDate = (String) memberMap.get("regDate");
+        this.updateDate = (String) memberMap.get("updateDate");
+        this.loginId = (String) memberMap.get("loginId");
+        this.loginPw = (String) memberMap.get("loginPw");
+        this.name = (String) memberMap.get("name");
     }
 
     public Member(int id, String regDate, String updateDate, String loginId, String loginPw, String name) {
