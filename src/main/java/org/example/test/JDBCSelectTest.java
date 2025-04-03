@@ -6,6 +6,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.controller.Controller.loginedMember;
+
+
 public class JDBCSelectTest {
     public static void main(String[] args) {
         Connection conn = null;
@@ -37,7 +40,7 @@ public class JDBCSelectTest {
                 String title = rs.getString("title");
                 String body = rs.getString("body");
 
-                Article article = new Article(id, regDate, updateDate, title, body);
+                Article article = new Article(id, regDate, updateDate, loginedMember.getId(), title, body);
 
                 list.add(article);
             }
